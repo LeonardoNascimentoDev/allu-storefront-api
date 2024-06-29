@@ -1,33 +1,32 @@
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-import CategoryCard from '../../components/CategoryCard'
-import { Container, Large } from '../../styles/pages/Home'
-import getAllCategories from '../../services/Categories/getAllCategories'
-import images from '../../utils/images'
+import { Container } from '../../styles/pages/Shop'
+import getAllProducts from '../../services/Products/getAllProducts'
+import ProductCard from '../../components/ProductCard'
 import { v4 as uuid } from 'uuid'
+import { Product } from '../../types/Product'
 
-const Home: NextPage = (): JSX.Element => {
-  const [categories, setCategories] = useState<string[]>([])
+const ShopPage: NextPage = (): JSX.Element => {
+  const [products, setProducts] = useState<Product[]>([])
 
-  const mountCategories = async () => {
-    await getAllCategories(setCategories)
+  const mountProducts = async () => {
+    await getAllProducts(setProducts)
   }
 
   useEffect(() => {
-    mountCategories()
+    mountProducts()
   }, [])
 
   return (
     <Container>
-      <Large>
-        {categories && categories.length > 0
-          ? categories.map((item, index: number) => (
-              <CategoryCard image={images[index]} name={item} key={uuid()} />
-            ))
-          : ''}
-      </Large>
+      <h1 className="title">All Results</h1>
+      <div className="cards">
+        {products.map((product) => (
+          <ProductCard key={uuid()} product={product} />
+        ))}
+      </div>
     </Container>
   )
 }
 
-export default Home
+export default ShopPage

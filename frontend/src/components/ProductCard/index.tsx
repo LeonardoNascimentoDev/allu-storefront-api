@@ -14,7 +14,7 @@ function ProductCard({ product }: ProductProps): JSX.Element {
 
   return (
     <Card>
-      <Image src={product.image} height={420} width={420} />
+      <Image src={product.image} height={420} width={420} alt="produto allu"/>
       <Title>{product.title}</Title>
       <h3 className="category">{product.category}</h3>
       <p>$ {product.price}</p>

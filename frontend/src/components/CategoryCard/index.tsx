@@ -10,12 +10,12 @@ interface CategoryCardProps {
 function CategoryCard(props: CategoryCardProps): JSX.Element {
   return (
     <Card>
-      <Image className="image" src={props.image} height={700} width={1300} alt="Imagens Allu" />
+      <Image className="image" src={props.image} height={700} width={1300} alt="produtos" />
       <Link href={`/category/${props.name.toLowerCase()}`}>
         <div className="info">
           <h2>{props.name}</h2>
           <p>Alugue Agora!</p>
-        </div>
+          </div>
       </Link>
     </Card>
   )
