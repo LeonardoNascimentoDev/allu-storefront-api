@@ -1,12 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Product } from '../../../types/Product'
+import { Product } from '../../types/Product'
 
 async function getProductsByCategory(
   setProducts: Dispatch<SetStateAction<Product[]>>,
-  name: string,
   categoryName: string
 ) {
-  fetch(`http://localhost:3000/products/category?${categoryName}?name${name}`)
+  fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
     .then((res) => res.json())
     .then((json) => setProducts(json))
 }
