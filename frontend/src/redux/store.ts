@@ -1,7 +1,8 @@
 import { configureStore, StateFromReducersMapObject } from '@reduxjs/toolkit'
+import { cartReducer } from './cart.slice'
 
 const reducer = {
-  cart: Object
+  cart: cartReducer,
 }
 
 const store = configureStore({
