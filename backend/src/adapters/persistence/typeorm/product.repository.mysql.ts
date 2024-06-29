@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { ProductRepository } from '../../../domain/ports/product.repository';
-import { Product } from '../../../domain/models/product.model';
-import { ProductEntity } from './product.entity';
+import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { ProductRepository } from "../../../domain/ports/product.repository";
+import { Product } from "../../../domain/models/product.model";
+import { ProductEntity } from "./product.entity";
 
 @Injectable()
 export class ProductRepositoryMySQL implements ProductRepository {

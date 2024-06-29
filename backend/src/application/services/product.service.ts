@@ -1,11 +1,11 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { ProductRepository } from '../../domain/ports/product.repository';
-import { Product } from '../../domain/models/product.model';
+import { Injectable, Inject } from "@nestjs/common";
+import { ProductRepository } from "../../domain/ports/product.repository";
+import { Product } from "../../domain/models/product.model";
 
 @Injectable()
 export class ProductService {
   constructor(
-    @Inject('ProductRepository')
+    @Inject("ProductRepository")
     private readonly productRepository: ProductRepository,
   ) {}
 
