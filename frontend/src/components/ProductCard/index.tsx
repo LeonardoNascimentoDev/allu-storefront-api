@@ -19,7 +19,7 @@ function ProductCard({ product }: ProductProps): JSX.Element {
       <h3 className="category">{product.category}</h3>
       <p>$ {product.price}</p>
       <button className="button" onClick={() => dispatch(addToCart(product))}>
-        Add to Cart
+        Assinar
       </button>
     </Card>
   )

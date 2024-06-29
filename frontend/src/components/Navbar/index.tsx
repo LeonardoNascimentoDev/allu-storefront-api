@@ -27,7 +27,7 @@ function Navbar(): JSX.Element {
           <Link href="/shop">Catalogo</Link>
         </li>
         <li className="navlink">
-          <Link href="/cart">{`Cart (${getItemsCount()})`}</Link>
+          <Link href="/cart">{`CARRINHO (${getItemsCount()})`}</Link>
         </li>
       </ul>
     </Nav>

@@ -19,7 +19,7 @@ const ShopPage: NextPage = (): JSX.Element => {
 
   return (
     <Container>
-      <h1 className="title">All Results</h1>
+      <h1 className="title">Produtos para asssinatura</h1>
       <div className="cards">
         {products.map((product) => (
           <ProductCard key={uuid()} product={product} />

@@ -14,7 +14,7 @@ function CategoryCard(props: CategoryCardProps): JSX.Element {
       <Link href={`/category/${props.name.toLowerCase()}`}>
         <div className="info">
           <h2>{props.name}</h2>
-          <p>Alugue Agora!</p>
+          <p>Assine Agora!</p>
           </div>
       </Link>
     </Card>
