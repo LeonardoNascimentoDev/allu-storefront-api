@@ -19,6 +19,7 @@ export class ProductRepositoryMySQL implements ProductRepository {
         new Product(
           product.id,
           product.name,
+          product.category,
           product.technicalDetails,
           product.annualValue,
           product.photos,
@@ -32,9 +33,26 @@ export class ProductRepositoryMySQL implements ProductRepository {
     return new Product(
       product.id,
       product.name,
+      product.category,
       product.technicalDetails,
       product.annualValue,
       product.photos,
+    );
+  }
+
+  async findByCategory(category: string): Promise<Product[]> {
+    const products = await this.repository.find({ where: { category } });
+    return products.map(this.mapEntityToModel);
+  }
+
+  private mapEntityToModel(entity: ProductEntity): Product {
+    return new Product(
+      entity.id,
+      entity.name,
+      entity.category,
+      entity.technicalDetails,
+      entity.annualValue,
+      entity.photos,
     );
   }
 }

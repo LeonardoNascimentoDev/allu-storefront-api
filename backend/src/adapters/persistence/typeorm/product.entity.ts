@@ -9,6 +9,9 @@ export class ProductEntity {
   name: string;
 
   @Column()
+  category: string;
+
+  @Column()
   technicalDetails: string;
 
   @Column()

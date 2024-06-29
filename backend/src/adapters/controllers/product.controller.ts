@@ -15,4 +15,11 @@ export class ProductController {
   async getProductById(@Param('id') id: number): Promise<Product | null> {
     return this.productService.findById(id);
   }
+
+  @Get('category/:category')
+  async getProductsByCategory(
+    @Param('category') category: string,
+  ): Promise<Product[]> {
+    return this.productService.findByCategory(category);
+  }
 }
