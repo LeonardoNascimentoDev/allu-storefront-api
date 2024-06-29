@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Product } from '../../types/Product'
+import { Product } from '../../../types/Product'
 
 async function getProductsByCategory(
   setProducts: Dispatch<SetStateAction<Product[]>>,
