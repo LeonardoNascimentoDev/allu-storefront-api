@@ -19,9 +19,9 @@ export class ProductRepositoryMySQL implements ProductRepository {
         new Product(
           product.id,
           product.name,
-          product.description,
-          product.price,
-          product.image,
+          product.technicalDetails,
+          product.annualValue,
+          product.photos,
         ),
     );
   }
@@ -32,9 +32,9 @@ export class ProductRepositoryMySQL implements ProductRepository {
     return new Product(
       product.id,
       product.name,
-      product.description,
-      product.price,
-      product.image,
+      product.technicalDetails,
+      product.annualValue,
+      product.photos,
     );
   }
 }

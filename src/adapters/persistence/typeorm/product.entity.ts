@@ -9,11 +9,11 @@ export class ProductEntity {
   name: string;
 
   @Column()
-  description: string;
+  technicalDetails: string;
 
   @Column()
-  price: number;
+  annualValue: string;
 
   @Column()
-  image: string;
+  photos: string;
 }
