@@ -17,7 +17,7 @@ export class ProductService {
     return this.productRepository.findById(id);
   }
 
-  async findByCategory(category: string): Promise<Product[]> {
-    return this.productRepository.findByCategory(category);
+  async findByPartialCategory(partialCategory: string): Promise<Product[]> {
+    return this.productRepository.findByPartialCategory(partialCategory);
   }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Controller, Get, Param, Query } from "@nestjs/common";
 import { ProductService } from "../../application/services/product.service";
 import { Product } from "../../domain/models/product.model";
 
@@ -16,10 +16,14 @@ export class ProductController {
     return this.productService.findById(id);
   }
 
-  @Get("category/:category")
-  async getProductsByCategory(
-    @Param("category") category: string,
+  @Get("search/category")
+  async getProductsByPartialCategory(
+    @Query("category") partialCategory: string,
   ): Promise<Product[]> {
-    return this.productService.findByCategory(category);
+    if (partialCategory) {
+      return this.productService.findByPartialCategory(partialCategory);
+    } else {
+      return this.productService.findAll();
+    }
   }
 }

@@ -40,8 +40,14 @@ export class ProductRepositoryMySQL implements ProductRepository {
     );
   }
 
-  async findByCategory(category: string): Promise<Product[]> {
-    const products = await this.repository.find({ where: { category } });
+  async findByPartialCategory(partialCategory: string): Promise<Product[]> {
+    const products = await this.repository
+      .createQueryBuilder("product")
+      .where("LOWER(product.category) LIKE LOWER(:partialCategory)", {
+        partialCategory: `%${partialCategory}%`,
+      })
+      .getMany();
+
     return products.map(this.mapEntityToModel);
   }
 
