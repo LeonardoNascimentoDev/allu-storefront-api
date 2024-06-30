@@ -4,16 +4,18 @@ import { useEffect, useState } from 'react'
 import ProductCard from '../../components/ProductCard'
 import { Container } from '../../styles/pages/Shop'
 import getProductsByCategory from '../../services/Products/getProductsByCategory'
-import { Product } from '../../types/Product'
+import { ProductsAllu } from '../../types/ProductsAllu'
 
 const CategoryPage: NextPage = (): JSX.Element => {
   const router = useRouter()
 
-  const categoryName: string = `${router.query.name}`
-  const [products, setProducts] = useState<Product[]>([])
+  const productName: string = `${router.query.name}`
+  const categoryName: string = `${router.query.category}`
+
+  const [products, setProducts] = useState<ProductsAllu[]>([])
 
   const mountProducts = async () => {
-    await getProductsByCategory(setProducts, categoryName)
+    await getProductsByCategory(setProducts, categoryName, productName)
   }
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const CategoryPage: NextPage = (): JSX.Element => {
     <Container>
       <h1 className="title">Results for {router.query.name}</h1>
       <div className="cards">
-        {products.map((product: Product) => (
+        {products.map((product: ProductsAllu) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

@@ -1,28 +1,31 @@
-import Image, { ImageProps } from 'next/image'
-import { useDispatch } from 'react-redux'
-import { addToCart } from '../../redux/cart.slice'
-import { AppDispatch } from '../../redux/store'
-import { Card, Title } from '../../styles/components/ProductCard'
-import { Product } from '../../types/Product'
+import Image from 'next/image';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cart.slice';
+import { AppDispatch } from '../../redux/store';
+import { Card, Title } from '../../styles/components/ProductCard';
+import { ProductsAllu } from '../../types/ProductsAllu';
 
 interface ProductProps {
-  product: Product
+  product: ProductsAllu;
 }
 
 function ProductCard({ product }: ProductProps): JSX.Element {
-  const dispatch: AppDispatch = useDispatch()
+  const dispatch: AppDispatch = useDispatch();
+
+  const photos = product.photos.replace("[", "").replace("]", "").split(",").map(url => url.trim());
+  const firstImageUrl = photos.length > 0 ? photos[0] : '';
 
   return (
     <Card>
-      <Image src={product.image} height={420} width={420} alt="produto allu"/>
-      <Title>{product.title}</Title>
+      <Image src={firstImageUrl} height={420} width={420} alt="produto allu" />
+      <Title>{product.name}</Title>
       <h3 className="category">{product.category}</h3>
-      <p>$ {product.price}</p>
+      <p>$ {product.annualValue}</p>
       <button className="button" onClick={() => dispatch(addToCart(product))}>
         Assinar
       </button>
     </Card>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;

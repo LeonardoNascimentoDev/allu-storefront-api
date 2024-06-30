@@ -1,13 +1,24 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Product } from '../../types/Product'
+import { ProductsAllu } from '../../types/ProductsAllu'
 
 async function getProductsByCategory(
-  setProducts: Dispatch<SetStateAction<Product[]>>,
+  setProducts: Dispatch<SetStateAction<ProductsAllu[]>>,
+  productName: string,
   categoryName: string
 ) {
-  fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
-    .then((res) => res.json())
-    .then((json) => setProducts(json))
+  try {
+    const url = `http://localhost:4000/products/search/category?categoryName=${categoryName}&name=${productName}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch products.');
+    }
+
+    const json = await response.json();
+    setProducts(json);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
 }
 
-export default getProductsByCategory
+export default getProductsByCategory;

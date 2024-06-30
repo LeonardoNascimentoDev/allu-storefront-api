@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Product } from '../../types/Product'
+import { ProductsAllu } from '../../types/ProductsAllu'
 
 async function getAllProducts(
-  setProducts: Dispatch<SetStateAction<Product[]>>
+  setProducts: Dispatch<SetStateAction<ProductsAllu[]>>
 ) {
-  fetch('https://fakestoreapi.com/products')
+  fetch('http://localhost:4000/products')
     .then((res) => res.json())
     .then((json) => setProducts(json))
 }
