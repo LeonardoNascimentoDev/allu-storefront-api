@@ -40,25 +40,31 @@ export class ProductRepositoryMySQL implements ProductRepository {
     );
   }
 
-  async findByCategory(category: string): Promise<Product[]> {
-    const products = await this.repository.find({ where: { category } });
-    return products.map(this.mapEntityToModel);
-  }
-
   async findByPartialCategoryAndName(
-    category: string,
-    name: string,
+    partialCategory: string,
+    partialName: string,
   ): Promise<Product[]> {
-    const products = await this.repository
-      .createQueryBuilder("product")
-      .where("LOWER(product.category) LIKE LOWER(:partialCategory)", {
-        partialCategory: `%${category}%`,
-      })
-      .andWhere("LOWER(product.name) LIKE LOWER(:partialName)", {
-        partialName: `%${name}%`,
-      })
-      .getMany();
+    let queryBuilder = this.repository.createQueryBuilder("product");
 
+    if (partialCategory) {
+      queryBuilder = queryBuilder.where(
+        "LOWER(product.category) LIKE LOWER(:partialCategory)",
+        {
+          partialCategory: `%${partialCategory}%`,
+        },
+      );
+    }
+
+    if (partialName) {
+      queryBuilder = queryBuilder.andWhere(
+        "LOWER(product.name) LIKE LOWER(:partialName)",
+        {
+          partialName: `%${partialName}%`,
+        },
+      );
+    }
+
+    const products = await queryBuilder.getMany();
     return products.map(this.mapEntityToModel);
   }
 
