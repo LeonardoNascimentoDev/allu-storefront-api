@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+import { Module, MiddlewareConsumer, RequestMethod } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ProductController } from "./adapters/controllers/product.controller";
 import { ProductService } from "./application/services/product.service";
@@ -17,4 +17,21 @@ import { typeOrmConfig } from "./infrastructure/config/typeorm.config";
     { provide: "ProductRepository", useClass: ProductRepositoryMySQL },
   ],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply((req, res, next) => {
+        res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.header(
+          "Access-Control-Allow-Headers",
+          "Origin, X-Requested-With, Content-Type, Accept",
+        );
+        res.header(
+          "Access-Control-Allow-Methods",
+          "GET, POST, PUT, DELETE, OPTIONS",
+        );
+        next();
+      })
+      .forRoutes({ path: "*", method: RequestMethod.ALL });
+  }
+}
