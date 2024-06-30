@@ -10,12 +10,11 @@ const CategoryPage: NextPage = (): JSX.Element => {
   const router = useRouter()
 
   const productName: string = `${router.query.name}`
-  const categoryName: string = `${router.query.category}`
 
   const [products, setProducts] = useState<ProductsAllu[]>([])
 
   const mountProducts = async () => {
-    await getProductsByCategory(setProducts, categoryName, productName)
+    await getProductsByCategory(setProducts, productName)
   }
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const CategoryPage: NextPage = (): JSX.Element => {
 
   return (
     <Container>
-      <h1 className="title">Results for {router.query.name}</h1>
+      <h1 className="title">Resultados para {router.query.name}</h1>
       <div className="cards">
         {products.map((product: ProductsAllu) => (
           <ProductCard key={product.id} product={product} />

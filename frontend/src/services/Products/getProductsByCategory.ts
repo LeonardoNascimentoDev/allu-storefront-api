@@ -3,11 +3,10 @@ import { ProductsAllu } from '../../types/ProductsAllu'
 
 async function getProductsByCategory(
   setProducts: Dispatch<SetStateAction<ProductsAllu[]>>,
-  productName: string,
   categoryName: string
 ) {
   try {
-    const url = `http://localhost:4000/products/search/category?categoryName=${categoryName}&name=${productName}`;
+    const url = `http://localhost:4000/products/search/category?category=${categoryName}`;
     const response = await fetch(url);
 
     if (!response.ok) {
