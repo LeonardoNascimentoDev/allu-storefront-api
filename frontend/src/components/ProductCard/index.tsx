@@ -12,15 +12,19 @@ interface ProductProps {
 function ProductCard({ product }: ProductProps): JSX.Element {
   const dispatch: AppDispatch = useDispatch();
 
-  const photos = product.photos.replace("[", "").replace("]", "").split(",").map(url => url.trim());
-  const firstImageUrl = photos.length > 0 ? photos[0] : '';
+  const photos = product.photos.replace(/[\[\]"]/g, '').split(',');
+  const imageUrl = photos.length > 0 ? photos[0].trim() : null;
+
+  if (!imageUrl) {
+    return <div>Nenhuma imagem disponível</div>;
+  }
 
   return (
     <Card>
-      <Image src={firstImageUrl} height={420} width={420} alt="produto allu" />
+      <Image src={imageUrl} alt={product.name} height={420} width={420} />
       <Title>{product.name}</Title>
       <h3 className="category">{product.category}</h3>
-      <p>$ {product.annualValue}</p>
+      <p>R$ {product.annualValue}</p>
       <button className="button" onClick={() => dispatch(addToCart(product))}>
         Assinar
       </button>
