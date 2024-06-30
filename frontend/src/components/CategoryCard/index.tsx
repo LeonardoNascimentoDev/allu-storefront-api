@@ -11,7 +11,7 @@ function CategoryCard(props: CategoryCardProps): JSX.Element {
   const trimmedName = props.name.slice(0, -1);
   return (
     <Card>
-      <Image className="image" src={props.image} height={700} width={1300} />
+      <Image className="image" src={props.image} height={700} width={1300} alt="category" />
       <Link href={`/category/${trimmedName}`}>
         <div className="info">
           <h2>{props.name}</h2>

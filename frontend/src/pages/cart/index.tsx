@@ -63,7 +63,7 @@ const CartPage: NextPage = (): JSX.Element => {
                 {item.photos ? (
                   getPhotosArray(item.photos).length > 0 ? (
                     getPhotosArray(item.photos).map((photoUrl, index) => (
-                      <Image key={index} src={photoUrl} height={90} width={65} />
+                      <Image key={index} src={photoUrl} height={90} width={65} alt="carrinho"/>
                     ))
                   ) : (
                     <div>Nenhuma imagem disponível</div>
