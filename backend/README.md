@@ -41,13 +41,6 @@ DB_NAME=products_db
 
 # upload docker containers
 $ docker-compose up --build
-## Running the app Docker
-
-# if you want to configure the application manually
-$ npm run start
-
-# watch mode
-$ npm run start:dev
 ```
 
 ## Running the app NPM
