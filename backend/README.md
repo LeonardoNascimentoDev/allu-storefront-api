@@ -1,8 +1,8 @@
 
-# Project name
+# Nome do Projeto
 <h1 align="center">AlluStorefrontAPI</h1>
 
-## Project description
+## Descrição do Projeto
 <p align="center">Allu Storefront API</p>
 
 
@@ -10,41 +10,60 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Instalação
 
 ```bash
 
-# clone repository
+# clone repositório 
 $ git clone git@github.com:LeonardoNascimentoDev/allu-storefront.git
 
-# access project folder
+# acessar a pasta do projeto
 $ cd allu-storefront
 
-# install project dependencies
+# instalar dependências do projeto
 $ npm install
 
 
 ```
 
-## Running the app
+## Executando a aplicação com Docker
 
 ```bash
 # development
+
+# configurando para usar o docker
+$ crie o arquivo .env na raiz do projeto e insira as variáveis
+NODE_ENV=local
+DB_HOST=db
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=products_db
+
+# construir e iniciar os contêineres
+$ docker-compose up --build
+```
+
+##  Executando a aplicação com NPM
+
+```bash
+# desenvolvimento
 $ npm run start
 
 # watch mode
 $ npm run start:dev
 ```
+
 ## Tecnologias
   - Typescript
   - Nest.js
   - MySQL
   - Swagger
   - Jest.js
+  - Docker
 
-## Documentação do Swagger
+## Documentação com Swagger
 
- - Application Swagger: http://localhost:4000/api/ 
+ - Swagger: http://localhost:4000/api/ 
  
 ## Stay in touch
 
