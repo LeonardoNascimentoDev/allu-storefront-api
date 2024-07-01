@@ -29,6 +29,14 @@ $ npm install
 ## Running the app
 
 ```bash
+# start docker
+$ create the .env file in the project root and insert the variables
+NODE_ENV=local
+DB_HOST=db
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=products_db
+
 # development
 $ npm run start
 
