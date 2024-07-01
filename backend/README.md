@@ -30,6 +30,7 @@ $ npm install
 
 ```bash
 # development
+
 # config docker
 $ create the .env file in the project root and insert the variables
 NODE_ENV=local
