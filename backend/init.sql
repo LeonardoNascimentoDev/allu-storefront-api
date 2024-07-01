@@ -1,14 +1,12 @@
--- Criação da tabela products
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
-    technicalDetails TEXT,
+    technicalDetails LONGTEXT,
     annualValue DECIMAL(10, 2) NOT NULL,
-    photos TEXT
+    photos LONGTEXT
 );
 
--- Inserção dos dados iniciais
 INSERT INTO products (name, category, technicalDetails, annualValue, photos)
 VALUES
 ('Notebook Acer Nitro V RTX 3050 i5 8GB', 'Notebook','Placa de video RTX 3050 com 6GB, Tela 15.6” Full HD - 144 Hertz, Capacidade 512GB SSD, Processador Intel Core i5 13ª geração, Memória RAM 8GB ANV15-51-57WS', 2508, '[https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2BThumb.png,https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2B2.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2B3.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2B4.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2B5.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2B6.jpeg]'),
