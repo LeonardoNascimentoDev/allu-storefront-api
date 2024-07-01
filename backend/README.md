@@ -2,7 +2,7 @@
 # Nome do Projeto
 <h1 align="center">AlluStorefrontAPI</h1>
 
-## Project description
+## Descrição do Projeto
 <p align="center">Allu Storefront API</p>
 
 
