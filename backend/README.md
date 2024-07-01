@@ -29,6 +29,7 @@ $ npm install
 ## Running the app
 
 ```bash
+# development
 # config docker
 $ create the .env file in the project root and insert the variables
 NODE_ENV=local
@@ -40,8 +41,7 @@ DB_NAME=products_db
 # upload docker containers
 $ docker-compose up --build
 
-# if you want to configure everything manually
-# development
+# if you want to configure the application manually
 $ npm run start
 
 # watch mode
