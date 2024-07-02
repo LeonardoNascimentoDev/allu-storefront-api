@@ -5,6 +5,7 @@ import { ProductService } from "./application/services/product.service";
 import { ProductRepositoryMySQL } from "./adapters/persistence/typeorm/product.repository.mysql";
 import { ProductEntity } from "./adapters/persistence/typeorm/product.entity";
 import { typeOrmConfig } from "./infrastructure/config/typeorm.config";
+import { WinstonLoggerService } from "./logging/winston-logger.service";
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { typeOrmConfig } from "./infrastructure/config/typeorm.config";
   providers: [
     ProductService,
     { provide: "ProductRepository", useClass: ProductRepositoryMySQL },
+    WinstonLoggerService,
   ],
 })
 export class AppModule {
