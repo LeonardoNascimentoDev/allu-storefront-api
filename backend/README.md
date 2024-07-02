@@ -81,7 +81,8 @@ $ Senha: @Testeallugator2024
   - Swagger
   - Jest.js
   - Docker
-
+  - Winston
+    
 ## Documentação com Swagger
 
  - Swagger: http://localhost:4000/api/ 
