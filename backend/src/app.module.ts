@@ -6,16 +6,22 @@ import { ProductRepositoryMySQL } from "./adapters/persistence/typeorm/product.r
 import { ProductEntity } from "./adapters/persistence/typeorm/product.entity";
 import { typeOrmConfig } from "./infrastructure/config/typeorm.config";
 import { WinstonLoggerService } from "./logging/winston-logger.service";
+import { CategoryService } from "./application/services/category.service";
+import { CategoryController } from "./adapters/controllers/category.controller";
+import { CategoryEntity } from "./adapters/persistence/typeorm/category.entity";
+import { CategoryRepositoryMySQL } from "./adapters/persistence/typeorm/category.repository.mysql";
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
-    TypeOrmModule.forFeature([ProductEntity]),
+    TypeOrmModule.forFeature([ProductEntity, CategoryEntity]),
   ],
-  controllers: [ProductController],
+  controllers: [ProductController, CategoryController],
   providers: [
     ProductService,
+    CategoryService,
     { provide: "ProductRepository", useClass: ProductRepositoryMySQL },
+    { provide: "CategoryRepository", useClass: CategoryRepositoryMySQL },
     WinstonLoggerService,
   ],
 })

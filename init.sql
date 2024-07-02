@@ -6,10 +6,24 @@ CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     category VARCHAR(255),
-    technicalDetails LONGTEXT,
+    technicalDetails VARCHAR(2000),
     annualValue DECIMAL(10, 2),
-    photos LONGTEXT
+    photos VARCHAR(2000)
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255),
+    photo VARCHAR(2000)
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+INSERT INTO categories (category, photo)
+VALUES
+( 'Notebooks', 'https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2BThumb.png'),
+( 'Desktops', 'https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2BThumb.png'),
+( 'Smartwatches', 'https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2BThumb.png'),
+( 'Smartphones', 'https://v2-allugator-images.s3.amazonaws.com/products/Acer%2BNitro%2B5%2B3050%2BThumb.png'),
+( 'Games', 'https://v2-allugator-images.s3.amazonaws.com/products/PS5%2BThumb%20%281%29.png');
 
 INSERT INTO products (name, category, technicalDetails, annualValue, photos)
 VALUES
@@ -32,4 +46,5 @@ VALUES
 ('iPhone 14 Pro Max 128GB','Smartphone', 'Tela - LTPO Super Retina XDR OLED, Tamanho 6.7, Resolução 2796 x 1290, Densidade 460 ppi, Proteção Scratch-resistant ceramic glass, oleophobic coating, Extras Always-on display, Dolby Vision, 120Hz e HDR 10 Plus, CPU Hexa-core (2x3.46 GHz Avalanche e 4x Blizzard)', 3718.87, '[https://v2-allugator-images.s3.amazonaws.com/products/iPhone%2B14%2BPro%2BMax.png]'),
 ('iPhone 14 128GB','Smartphone', '6.1 polegadas, A15, Super Retina XDR OLED, Ceramic Shield, Câmera dupla, grande angular, ultra grande angular, telefoto + sensor proximidade, 5G', 2362.80, '[https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14+Thumb.png,https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14++-+2.jpg,https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14++-+3.jpg,https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14++-+4.jpg]'),
 ('iPhone 13 128GB','Smartphone', '6.1 polegadas, A15 Bionic, Super Retina XDR OLED, Ceramic Glass, Câmera dupla, grande angular, ultra grande angular, 5G', 2218.80, '[https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+Thumb.png,https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+-+2.jpg,https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+-+3.jpg]'),
-('Playstation 5','Playstation', '4K, SSD, 825 Gb de armazenamento livre e PSN Essential inclusa', 2099, '[https://v2-allugator-images.s3.amazonaws.com/products/PS5%2BThumb%20%281%29.png,https://v2-allugator-images.s3.amazonaws.com/products/2.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/3.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/4.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/5.jpeg]');
+('Playstation 5','Games', '4K, SSD, 825 Gb de armazenamento livre e PSN Essential inclusa', 2099, '[https://v2-allugator-images.s3.amazonaws.com/products/PS5%2BThumb%20%281%29.png,https://v2-allugator-images.s3.amazonaws.com/products/2.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/3.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/4.jpeg,https://v2-allugator-images.s3.amazonaws.com/products/5.jpeg]');
+

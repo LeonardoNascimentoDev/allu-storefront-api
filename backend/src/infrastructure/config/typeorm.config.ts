@@ -1,5 +1,6 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { ProductEntity } from "../../adapters/persistence/typeorm/product.entity";
+import { CategoryEntity } from "src/adapters/persistence/typeorm/category.entity";
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: "mysql",
@@ -8,6 +9,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: "root",
   password: "root",
   database: "products_db",
-  entities: [ProductEntity],
+  entities: [ProductEntity, CategoryEntity],
   synchronize: true,
 };
