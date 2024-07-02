@@ -4,7 +4,15 @@ import { Repository } from "typeorm";
 import { Product } from "src/domain/models/product.model";
 import { ProductRepositoryMySQL } from "src/adapters/persistence/typeorm/product.repository.mysql";
 import { ProductEntity } from "src/adapters/persistence/typeorm/product.entity";
+import { WinstonLoggerService } from "src/logging/winston-logger.service";
 
+const mockWinstonLoggerService = {
+  log: jest.fn(),
+  error: jest.fn(),
+  warn: jest.fn(),
+  debug: jest.fn(),
+  verbose: jest.fn(),
+};
 describe("ProductRepositoryMySQL", () => {
   let repository: Repository<ProductEntity>;
   let productRepository: ProductRepositoryMySQL;
@@ -16,6 +24,10 @@ describe("ProductRepositoryMySQL", () => {
         {
           provide: getRepositoryToken(ProductEntity),
           useClass: Repository,
+        },
+        {
+          provide: WinstonLoggerService,
+          useValue: mockWinstonLoggerService,
         },
       ],
     }).compile();

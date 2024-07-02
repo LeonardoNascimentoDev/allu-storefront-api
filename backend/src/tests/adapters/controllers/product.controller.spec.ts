@@ -2,6 +2,16 @@ import { Test, TestingModule } from "@nestjs/testing";
 import { ProductController } from "src/adapters/controllers/product.controller";
 import { ProductService } from "src/application/services/product.service";
 import { Product } from "src/domain/models/product.model";
+import { WinstonLoggerService } from "src/logging/winston-logger.service";
+import { NotFoundException } from "@nestjs/common";
+
+const mockWinstonLoggerService = {
+  log: jest.fn(),
+  error: jest.fn(),
+  warn: jest.fn(),
+  debug: jest.fn(),
+  verbose: jest.fn(),
+};
 
 describe("ProductController", () => {
   let productController: ProductController;
@@ -30,6 +40,10 @@ describe("ProductController", () => {
               .mockResolvedValue([mockProduct]),
           },
         },
+        {
+          provide: WinstonLoggerService,
+          useValue: mockWinstonLoggerService,
+        },
       ],
     }).compile();
 
@@ -52,9 +66,12 @@ describe("ProductController", () => {
       expect(await productController.getProductById(1)).toBe(mockProduct);
     });
 
-    it("should return null if no product is found", async () => {
+    it("should throw a NotFoundException if no product is found", async () => {
       jest.spyOn(productService, "findById").mockResolvedValue(null);
-      expect(await productController.getProductById(999)).toBeNull();
+
+      await expect(productController.getProductById(999)).rejects.toThrow(
+        new NotFoundException("Product with id 999 not found"),
+      );
     });
   });
 
