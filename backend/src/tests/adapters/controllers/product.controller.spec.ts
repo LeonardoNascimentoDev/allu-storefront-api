@@ -54,7 +54,6 @@ describe("ProductController", () => {
 
     it("should return null if no product is found", async () => {
       jest.spyOn(productService, "findById").mockResolvedValue(null);
-
       expect(await productController.getProductById(999)).toBeNull();
     });
   });
