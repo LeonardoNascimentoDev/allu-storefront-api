@@ -1,14 +1,14 @@
-CREATE DATABASE IF NOT EXISTS products_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE products_db CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 USE products_db;
 
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     category VARCHAR(255),
-    technicalDetails TEXT,
+    technicalDetails LONGTEXT,
     annualValue DECIMAL(10, 2),
-    photos TEXT
+    photos LONGTEXT
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 INSERT INTO products (name, category, technicalDetails, annualValue, photos)
