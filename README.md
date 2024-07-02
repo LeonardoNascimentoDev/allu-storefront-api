@@ -12,13 +12,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - Swagger
  - Docker (Implementando)
  - Jest.js (Implementando)
+ - Winton Logger
 
  ### 📕 Boas práticas e Arquitetura
  - Clean Code
  - Hexagonal Architecture
  - Microservice
- - Unit testing (Implementando)
- 
+ - Unit testing
+ - Monitoring and Logs
+
 
 ### 🎨 Frontend
 Para ver informações sobre o frontend ver README da pasta 📁frontend
