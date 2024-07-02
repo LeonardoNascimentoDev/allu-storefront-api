@@ -19,7 +19,7 @@ const CategoryPage: NextPage = (): JSX.Element => {
 
   useEffect(() => {
     mountProducts()
-  }, [])
+  })
 
   return (
     <Container>
