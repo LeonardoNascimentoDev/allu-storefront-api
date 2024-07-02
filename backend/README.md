@@ -53,6 +53,14 @@ $ npm run start
 $ npm run start:dev
 ```
 
+##  Rodando testes unitários com Jest.js
+
+```bash
+# desenvolvimento
+$ npm run test
+
+```
+
 ## Tecnologias
   - Typescript
   - Nest.js
