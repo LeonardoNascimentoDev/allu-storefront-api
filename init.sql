@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS products_db;
+
 CREATE DATABASE products_db CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 USE products_db;
