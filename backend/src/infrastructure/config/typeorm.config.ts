@@ -4,7 +4,7 @@ import { CategoryEntity } from "src/adapters/persistence/typeorm/category.entity
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: "mysql",
-  host: "db",
+  host: process.env.DB_HOST,
   port: 3306,
   username: "root",
   password: "root",

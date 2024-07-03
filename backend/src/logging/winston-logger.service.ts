@@ -2,7 +2,8 @@ import { Injectable, LoggerService } from "@nestjs/common";
 import * as winston from "winston";
 import "winston-daily-rotate-file";
 import * as winstonLoggly from "winston-loggly-bulk";
-
+import { config } from "dotenv";
+config();
 @Injectable()
 export class WinstonLoggerService implements LoggerService {
   private logger: winston.Logger;
