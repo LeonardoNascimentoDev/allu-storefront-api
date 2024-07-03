@@ -14,6 +14,8 @@
 ##  Executando a aplicação com NPM (caso não queira rodar sem o docker)
 
 ```bash
+$ npm install
+
 # desenvolvimento
 $ npm run start
 
