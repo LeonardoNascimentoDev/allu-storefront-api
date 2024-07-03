@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react'
-import { ProductsAllu } from '../../types/ProductsAllu'
+import { Products } from '../../types/Products'
 
 async function getProductsByCategory(
-  setProducts: Dispatch<SetStateAction<ProductsAllu[]>>,
+  setProducts: Dispatch<SetStateAction<Products[]>>,
   categoryName: string
 ) {
   try {

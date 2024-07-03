@@ -4,10 +4,10 @@ import { Container } from '../../styles/pages/Shop'
 import getAllProducts from '../../services/Products/getAllProducts'
 import ProductCard from '../../components/ProductCard'
 import { v4 as uuid } from 'uuid'
-import { ProductsAllu } from '../../types/ProductsAllu'
+import { Products } from '../../types/Products'
 
 const ShopPage: NextPage = (): JSX.Element => {
-  const [products, setProducts] = useState<ProductsAllu[]>([])
+  const [products, setProducts] = useState<Products[]>([])
 
   const mountProducts = async () => {
     await getAllProducts(setProducts)

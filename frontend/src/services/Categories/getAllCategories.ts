@@ -1,10 +1,11 @@
+import { Categories } from '@/src/types/Categories'
 import { Dispatch, SetStateAction } from 'react'
 
-//Criar rota depois
 async function getAllCategories(
-  setCategories: Dispatch<SetStateAction<string[]>>
+  setCategories: Dispatch<SetStateAction<Categories[]>>
+
 ) {
-  fetch('https://fakestoreapi.com/products/categories')
+  fetch('http://localhost:4000/categories')
     .then((res) => res.json())
     .then((json) => setCategories(json))
 }

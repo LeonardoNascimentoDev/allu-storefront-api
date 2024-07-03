@@ -3,11 +3,11 @@ import Image from 'next/image';
 // import { addToCart } from '../../redux/cart.slice';
 // import { AppDispatch } from '../../redux/store';
 import { Card, Title } from '../../styles/components/ProductCard';
-import { ProductsAllu } from '../../types/ProductsAllu';
+import { Products } from '../../types/Products';
 import { useRouter } from 'next/router'; 
 
 interface ProductProps {
-  product: ProductsAllu;
+  product: Products;
 }
 
 function ProductCard({ product }: ProductProps): JSX.Element {

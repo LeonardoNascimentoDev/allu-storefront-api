@@ -1,4 +1,4 @@
-export type ProductsAllu = {
+export type Products = {
   key: number
   id: number
   name: string
