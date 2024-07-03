@@ -23,7 +23,7 @@ $ npm install
 ```bash
 # development
 
-# OBS: é necessário tem o docker instalado na máquina
+# OBS: é necessário ter o docker instalado na máquina
 
 # configurando para usar o docker
 $ crie o arquivo .env na raiz do projeto e insira as variáveis
