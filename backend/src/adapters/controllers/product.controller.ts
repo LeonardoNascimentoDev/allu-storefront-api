@@ -67,7 +67,9 @@ export class ProductController {
       this.logger.log(
         `Searching for products with category: ${partialCategory} and name: ${partialName}`,
       );
-      if (partialCategory || partialName) {
+      if (partialCategory === "all") {
+        return await this.productService.findAll();
+      } else if (partialCategory || partialName) {
         return await this.productService.findByPartialCategoryAndName(
           partialCategory,
           partialName,
