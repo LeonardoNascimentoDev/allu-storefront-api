@@ -72,9 +72,12 @@ const ProductPage: NextPage = (): JSX.Element => {
           <h2 className="title">{product.name}</h2>
           <h4 className="description">{product.technical_details}</h4>
           <div className="priceBox">
-            <span className="annualPrice">R$ {annualPrice}</span>
-            <span className="monthlyPrice">R$ {monthlyPrice}</span>
+            <span className="annualPrice"> Valor anual R$ {annualPrice}</span>
+            <span className="monthlyPrice"> Valor mensal R$ {monthlyPrice}</span>
             <span></span>
+          </div>
+          <div className="priceBox">
+
           </div>
           <div className="priceBox">
             <StyledButton onClick={() => dispatch(addToCart(product))}>Assinar</StyledButton>
