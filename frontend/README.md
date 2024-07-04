@@ -75,8 +75,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
    
 -   **[Jest](https://jestjs.io)**
 
--   **[React Testing Library](https://testing-library.com)**
-
 ---
 
 ## 🦸 Autor
