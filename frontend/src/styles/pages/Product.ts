@@ -10,7 +10,7 @@ export const Container = styled.div`
   .productContainer {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 55%;
     justify-content: flex-start;
   }
 

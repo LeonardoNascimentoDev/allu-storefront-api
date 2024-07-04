@@ -11,7 +11,7 @@ import {
 interface Cart {
   id: number;
   quantity: number;
-  annual_value: number;
+  annual_value: string;
   name: string;
   photos: string;
 }
@@ -23,9 +23,9 @@ const CartPage: NextPage = (): JSX.Element => {
   const getTotalPrice = () => {
     return cart.reduce(
       (accumulator: number, item: Cart) =>
-        accumulator + item.quantity * item.annual_value,
+        accumulator + item.quantity * Number(item.annual_value),
       0
-    );
+    ).toFixed(2);
   };
 
   const getPhotosArray = (photos: string): string[] => {
@@ -72,7 +72,7 @@ const CartPage: NextPage = (): JSX.Element => {
                 )}
               </div>
               <p>{item.name}</p>
-              <p>R$ {item.annual_value}</p>
+              <p>R$ {Number(item.annual_value).toFixed(2)}</p>
               <p>{item.quantity}</p>
               <div className="buttons">
                 <button onClick={() => dispatch(incrementQuantity(item.id))}>
@@ -85,7 +85,7 @@ const CartPage: NextPage = (): JSX.Element => {
                   X
                 </button>
               </div>
-              <p>R$ {item.quantity * item.annual_value}</p>
+              <p>R$ {(item.quantity * Number(item.annual_value)).toFixed(2)}</p>
             </div>
           ))}
           <h2>Total de assinaturas: R$ {getTotalPrice()}</h2>
