@@ -8,17 +8,20 @@ interface CategoryCardProps {
 }
 
 function CategoryCard(props: CategoryCardProps): JSX.Element {
-  const trimmedName = props.category.slice(0, -1);
+  const { photo, category } = props
+  const trimmedName = category;
+
   return (
-    <Card>
-      <Image className="image" src={props.photo} height={700} width={1300} alt="category" />
-      <Link href={`/category/${trimmedName}`}>
-        <div className="info">
-          <h2>{props.category}</h2>
-          <p>Assine Agora!</p>
-          </div>
+    <div className='categoryItem'>
+      <Link href={`/catalog/${trimmedName}`}>
+        <Card className='categoryCard'>
+          {photo ? <Image className="image" src={photo} height={81} width={48} alt="category" /> : <h5>Nenhuma imagem encontrada</h5>}
+        </Card>
       </Link>
-    </Card>
+      <div className="info">
+        <h5>{category}</h5>
+      </div>
+    </div>
   )
 }
 

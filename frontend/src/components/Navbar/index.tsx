@@ -21,10 +21,7 @@ function Navbar(): JSX.Element {
       <p className="logo">Allu</p>
       <ul className="links">
         <li className="navlink">
-          <Link href="/">Home</Link>
-        </li>
-        <li className="navlink">
-          <Link href="/shop">Catalogo</Link>
+          <Link href="/catalog/all">Catalogo</Link>
         </li>
         <li className="navlink">
           <Link href="/cart">{`CARRINHO (${getItemsCount()})`}</Link>
