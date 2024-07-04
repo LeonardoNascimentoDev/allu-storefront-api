@@ -35,7 +35,7 @@ $ npm run test
 ## Tecnologias
   - Typescript
   - Nest.js
-  - MySQL
+  - PostgreSQL
   - Swagger
   - Jest.js
   - Docker
