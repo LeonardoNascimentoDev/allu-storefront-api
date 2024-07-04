@@ -23,6 +23,13 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+##  Rodando testes unitários com Jest.js
+
+```bash
+# desenvolvimento
+$ npm run test
+
+```
 
 
 ## Tecnologias
