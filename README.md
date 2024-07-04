@@ -19,9 +19,9 @@ $ cd allu-storefront
 ```bash
 # development
 
-# OBS: É necessário ter o docker instalado na máquina.
+# OBS: É necessário ter o docker instalado na máquina
 
-# construir e iniciar os contêineres
+# construir e iniciar os contêineres (também cria todas as tabelas e faz os inserts necessários)
 $ docker-compose up --build
 
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
