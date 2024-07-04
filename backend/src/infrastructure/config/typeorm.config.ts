@@ -1,6 +1,7 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { ProductEntity } from "../../adapters/persistence/typeorm/product.entity";
 import { CategoryEntity } from "src/adapters/persistence/typeorm/category.entity";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: "postgres",
@@ -10,7 +11,8 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD || "root",
   database: process.env.DB_NAME || "products_db",
   entities: [ProductEntity, CategoryEntity],
-  synchronize: true,
+  synchronize: false,
   retryAttempts: 20,
   retryDelay: 5000,
+  namingStrategy: new SnakeNamingStrategy(),
 };

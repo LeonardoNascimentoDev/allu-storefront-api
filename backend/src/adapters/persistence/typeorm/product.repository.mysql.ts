@@ -23,8 +23,8 @@ export class ProductRepositoryMySQL implements ProductRepository {
             product.id,
             product.name,
             product.category,
-            product.technicalDetails,
-            product.annualValue,
+            product.technical_details,
+            product.annual_value,
             product.photos,
           ),
       );
@@ -42,8 +42,8 @@ export class ProductRepositoryMySQL implements ProductRepository {
         product.id,
         product.name,
         product.category,
-        product.technicalDetails,
-        product.annualValue,
+        product.technical_details,
+        product.annual_value,
         product.photos,
       );
     } catch (error) {
@@ -92,8 +92,8 @@ export class ProductRepositoryMySQL implements ProductRepository {
       entity.id,
       entity.name,
       entity.category,
-      entity.technicalDetails,
-      entity.annualValue,
+      entity.technical_details,
+      entity.annual_value,
       entity.photos,
     );
   }

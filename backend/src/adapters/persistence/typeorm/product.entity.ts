@@ -33,16 +33,20 @@ export class ProductEntity {
       "Placa de video RTX 3050 com 6GB, Tela 15.6” Full HD - 144 Hertz, Capacidade 512GB SSD, Processador Intel Core i5 13ª geração, Memória RAM 8GB ANV15-51-57WS",
     type: String,
   })
-  @Column({ type: "varchar", length: 1000, nullable: true })
-  technicalDetails: string;
+  @Column({
+    type: "varchar",
+    length: 1000,
+    nullable: true,
+  })
+  technical_details: string;
 
   @ApiProperty({
     example: "2998.80",
     description: "Valor da assinatura",
     type: Number,
   })
-  @Column({ type: "decimal", precision: 10, scale: 2, nullable: true })
-  annualValue: number;
+  @Column({ type: "decimal", precision: 10, scale: 2 })
+  annual_value: number;
 
   @ApiProperty({
     example: "Imagens",
