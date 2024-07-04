@@ -14,7 +14,6 @@ function ProductCard({ product }: ProductProps): JSX.Element {
   const imageUrl = photos.length > 0 ? photos[0].trim() : null;
 
   const handleCardClick = () => {
-    // Redirect to the product details page
     router.push(`/product/${product.id}`);
   };
 
@@ -23,11 +22,8 @@ function ProductCard({ product }: ProductProps): JSX.Element {
       {!imageUrl ? <div>Nenhuma imagem disponível</div> 
         : <Image src={imageUrl} alt={product.name} height={220} width={196} />}
       <Title>{product.name}</Title>
-      <Details>{product.technicalDetails}</Details>
-      <p>R$ {product.annualValue}</p>
-      {/* <button className="button" onClick={() => dispatch(addToCart(product))}>
-        Assinar
-      </button> */}
+      <Details>{product.technical_details}</Details>
+      <p>R$ {product.annual_value}</p>
     </Card>
   );
 }

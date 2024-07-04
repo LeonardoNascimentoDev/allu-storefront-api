@@ -19,7 +19,7 @@ const CategoryPage: NextPage = (): JSX.Element => {
   const [products, setProducts] = useState<Products[]>([])
   const [categories, setCategories] = useState<Categories[]>([])
 
-  
+
   const getProducts = async (category: string) => {
     await getProductsByCategory(setProducts, category)
   }

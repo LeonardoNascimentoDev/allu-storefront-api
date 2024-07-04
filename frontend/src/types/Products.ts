@@ -3,7 +3,7 @@ export type Products = {
   id: number
   name: string
   category: string
-  technicalDetails: string
-  annualValue: number
+  technical_details: string
+  annual_value: number
   photos: string
 }
