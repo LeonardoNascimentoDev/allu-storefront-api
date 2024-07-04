@@ -1,5 +1,4 @@
 import CategoryCard from '../../components/CategoryCard'
-import images from '../../utils/images'
 import { v4 as uuid } from 'uuid'
 import { Categories } from '../../types/Categories'
 import { CategoryContainer } from '@/src/styles/components/CategoryList'
@@ -14,10 +13,10 @@ function CategoryList(props: CategoryListProps): JSX.Element {
   return (
     <CategoryContainer>
       <div className='categoryContainer'>
-        {categories.map((item, index) => (
+        {categories.map((item) => (
           <CategoryCard
-            key={uuid()} 
-            photo={images[index]} 
+            key={uuid()}
+            photo={item.photo}
             category={item.category}
           />
         ))}

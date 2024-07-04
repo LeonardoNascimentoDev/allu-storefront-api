@@ -10,16 +10,22 @@ export const Container = styled.div`
   .productContainer {
     display: flex;
     flex-direction: row;
-    width: 1200px;
-    justify-self: center;
+    width: 70%;
+    justify-content: flex-start;
   }
 
   .productCarousel {
-    flex: 1;
-    .slick-slide img {
-      width: 100%;
-      height: auto;
-    }
+    width: 50%;
+  }
+
+  .sliderImageContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .sliderImage {
+    width: 100%;
+    height: auto;
   }
 
   .productInfo {
@@ -29,12 +35,14 @@ export const Container = styled.div`
       font-size: 1.5rem;
       line-height: 2rem;
       margin: 0 1rem 1rem;
+      width: 60%;
     }
     .description {
       font-size: 1rem;
       line-height: 1.5rem;
       margin: 1rem 1rem;
       color: #6f707e;
+      width: 60%;
     }
 
     .priceBox {
@@ -42,6 +50,7 @@ export const Container = styled.div`
       flex-direction: column;
       flex-wrap: wrap;
       align-content: end;
+      width: 60%;
 
       .annualPrice {
         font-size: 1.5rem;
@@ -57,34 +66,6 @@ export const Container = styled.div`
         line-height: 1.5rem;
         margin: 0 1rem 1rem;
       }
-    }
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2.5rem 1rem;
-    place-items: center;
-  }
-
-  button {
-    margin-top: 2rem;
-    height: 48px;
-    width: 100%;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    background-color: #4bd184;
-    padding: 0.75rem 2rem;
-    font-weight: 700;
-    line-height: 1;
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    display: block;
-    color: #ffffff;
-
-    &:hover {
-      opacity: 0.8;
     }
   }
 `;

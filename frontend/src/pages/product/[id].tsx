@@ -1,14 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-// import Slider from 'react-slick';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Container, StyledButton } from '../../styles/pages/Product';
 import getProductById from '../../services/Products/getProductById';
 import { Product } from '../../types/Product';
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../redux/store'
 import { addToCart } from '../../redux/cart.slice'
-
+import { Carousel } from 'react-responsive-carousel';
 
 const ProductPage: NextPage = (): JSX.Element => {
   const dispatch: AppDispatch = useDispatch()
@@ -42,31 +43,22 @@ const ProductPage: NextPage = (): JSX.Element => {
   let imageUrls: string[] = [];
   try {
     imageUrls = JSON.parse(product.photos);
-    console.log(imageUrls, 'AQUIIII33')
   } catch (error) {
     console.error('Erro ao parsear as URLs de imagem:', error);
     imageUrls = [];
   }
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
-
   return (
     <Container>
       <div className="productContainer">
         <div className="productCarousel">
-          {/* <Slider {...settings}>
+          <Carousel>
             {imageUrls.map((img, index) => (
-              <div key={index}>
-                <img src={img.trim()} alt={`Product image ${index + 1}`} />
+              <div key={index} className="sliderImageContainer">
+                <img src={img.trim()} alt={`Product image ${index + 1}`} className="sliderImage" />
               </div>
             ))}
-          </Slider> */}
+          </Carousel>
         </div>
         <div className="productInfo">
           <h2 className="title">{product.name}</h2>
@@ -75,9 +67,6 @@ const ProductPage: NextPage = (): JSX.Element => {
             <span className="annualPrice"> Valor anual R$ {annualPrice}</span>
             <span className="monthlyPrice"> Valor mensal R$ {monthlyPrice}</span>
             <span></span>
-          </div>
-          <div className="priceBox">
-
           </div>
           <div className="priceBox">
             <StyledButton onClick={() => dispatch(addToCart(product))}>Assinar</StyledButton>
