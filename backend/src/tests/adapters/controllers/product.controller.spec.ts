@@ -21,8 +21,8 @@ describe("ProductController", () => {
     id: 1,
     name: "Test Product",
     category: "Test Category",
-    technicalDetails: "Some technical details",
-    annualValue: "1000",
+    technical_details: "Some technical details",
+    annual_value: 1000,
     photos: '"photo1.jpg", "photo2.jpg"',
   };
 

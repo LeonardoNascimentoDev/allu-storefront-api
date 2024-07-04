@@ -12,8 +12,8 @@ class MockProductRepository implements ProductRepository {
         id: 1,
         name: "Test Product",
         category: "Test Category",
-        technicalDetails: "Test Details",
-        annualValue: "100.00",
+        technical_details: "Test Details",
+        annual_value: 100.0,
         photos: "test.jpg",
       };
     }
@@ -29,16 +29,16 @@ class MockProductRepository implements ProductRepository {
         id: 1,
         name: "Product 1",
         category: "Category 1",
-        technicalDetails: "Details",
-        annualValue: "100.00",
+        technical_details: "Details",
+        annual_value: 100.0,
         photos: "photo1.jpg",
       },
       {
         id: 2,
         name: "Product 2",
         category: "Category 2",
-        technicalDetails: "Details",
-        annualValue: "200.00",
+        technical_details: "Details",
+        annual_value: 200.0,
         photos: "photo2.jpg",
       },
     ];

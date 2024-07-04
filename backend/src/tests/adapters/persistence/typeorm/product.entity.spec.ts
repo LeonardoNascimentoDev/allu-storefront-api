@@ -11,8 +11,8 @@ describe("ProductEntity", () => {
     expect(product.id).toBeUndefined();
     expect(product.name).toBeUndefined();
     expect(product.category).toBeUndefined();
-    expect(product.technicalDetails).toBeUndefined();
-    expect(product.annualValue).toBeUndefined();
+    expect(product.technical_details).toBeUndefined();
+    expect(product.annual_value).toBeUndefined();
     expect(product.photos).toBeUndefined();
   });
 
@@ -20,14 +20,14 @@ describe("ProductEntity", () => {
     const product = new ProductEntity();
     product.name = "Test Product";
     product.category = "Test Category";
-    product.technicalDetails = "Test Technical Details";
-    product.annualValue = "1000.00";
+    product.technical_details = "Test Technical Details";
+    product.annual_value = 1000.0;
     product.photos = "photo1.jpg,photo2.jpg";
 
     expect(product.name).toEqual("Test Product");
     expect(product.category).toEqual("Test Category");
-    expect(product.technicalDetails).toEqual("Test Technical Details");
-    expect(product.annualValue).toEqual("1000.00");
+    expect(product.technical_details).toEqual("Test Technical Details");
+    expect(product.annual_value).toEqual(1000.0);
     expect(product.photos).toEqual("photo1.jpg,photo2.jpg");
   });
 });

@@ -7,7 +7,7 @@ describe("Product", () => {
       "Product Name",
       "Category",
       "Technical Details",
-      "100.00",
+      100.0,
       "photo.jpg",
     );
 
@@ -15,8 +15,8 @@ describe("Product", () => {
     expect(product.id).toEqual(1);
     expect(product.name).toEqual("Product Name");
     expect(product.category).toEqual("Category");
-    expect(product.technicalDetails).toEqual("Technical Details");
-    expect(product.annualValue).toEqual("100.00");
+    expect(product.technical_details).toEqual("Technical Details");
+    expect(product.annual_value).toEqual(100.0);
     expect(product.photos).toEqual("photo.jpg");
   });
 
@@ -26,7 +26,7 @@ describe("Product", () => {
       "Product 1",
       "Category 1",
       "",
-      "200.00",
+      200.0,
       "photo1.jpg",
     );
     const product2 = new Product(
@@ -34,7 +34,7 @@ describe("Product", () => {
       "Product 2",
       "Category 2",
       "Details",
-      "300.00",
+      300.0,
       "photo2.jpg",
     );
 
@@ -44,10 +44,10 @@ describe("Product", () => {
     expect(product2.name).toEqual("Product 2");
     expect(product1.category).toEqual("Category 1");
     expect(product2.category).toEqual("Category 2");
-    expect(product1.technicalDetails).toEqual("");
-    expect(product2.technicalDetails).toEqual("Details");
-    expect(product1.annualValue).toEqual("200.00");
-    expect(product2.annualValue).toEqual("300.00");
+    expect(product1.technical_details).toEqual("");
+    expect(product2.technical_details).toEqual("Details");
+    expect(product1.annual_value).toEqual(200.0);
+    expect(product2.annual_value).toEqual(300.0);
     expect(product1.photos).toEqual("photo1.jpg");
     expect(product2.photos).toEqual("photo2.jpg");
   });

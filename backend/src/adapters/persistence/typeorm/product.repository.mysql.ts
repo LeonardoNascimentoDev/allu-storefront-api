@@ -93,7 +93,7 @@ export class ProductRepositoryMySQL implements ProductRepository {
       entity.name,
       entity.category,
       entity.technical_details,
-      entity.annual_value,
+      parseFloat(entity.annual_value.toString()),
       entity.photos,
     );
   }

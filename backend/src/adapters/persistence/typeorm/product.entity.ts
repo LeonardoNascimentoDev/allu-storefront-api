@@ -45,7 +45,7 @@ export class ProductEntity {
     description: "Valor da assinatura",
     type: Number,
   })
-  @Column({ type: "decimal", precision: 10, scale: 2 })
+  @Column({ type: "numeric", precision: 10, scale: 2 })
   annual_value: number;
 
   @ApiProperty({
