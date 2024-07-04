@@ -47,7 +47,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - NestJS
  - React.js
  - Next.js
- - MySQL
+ - PostgreSQL
  - Swagger
  - Docker 
  - Jest.js
