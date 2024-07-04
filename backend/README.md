@@ -11,7 +11,7 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 
-##  Executando a aplicação com NPM (caso não queira rodar sem o docker)
+##  Executando a aplicação com NPM (Caso não queira rodar sem o Docker)
 
 ```bash
 # instalação
