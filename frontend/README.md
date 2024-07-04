@@ -20,7 +20,6 @@
 ## ⚙️ Funcionalidades
 
 - [x] Catálogo de Produtos 
-- [x] Busca de Produtos
 - [x] Página de Produtos
 - [x] Carrinho de Compras
 ---
