@@ -13,8 +13,8 @@ async function getProductById(
       throw new Error("Failed to fetch product.");
     }
 
-    const json = await response.json();
-    setProducts(json);
+    const productData = await response.json();
+    setProducts(productData);
   } catch (error) {
     console.error("Error fetching product:", error);
   }

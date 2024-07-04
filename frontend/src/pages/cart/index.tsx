@@ -11,7 +11,7 @@ import {
 interface Cart {
   id: number;
   quantity: number;
-  annualValue: number;
+  annul_value: number;
   name: string;
   photos: string;
 }
@@ -23,7 +23,7 @@ const CartPage: NextPage = (): JSX.Element => {
   const getTotalPrice = () => {
     return cart.reduce(
       (accumulator: number, item: Cart) =>
-        accumulator + item.quantity * item.annualValue,
+        accumulator + item.quantity * item.annul_value,
       0
     );
   };
@@ -36,7 +36,7 @@ const CartPage: NextPage = (): JSX.Element => {
       .map(photo => photo.trim())
       .filter(photo => {
         const lowerCasePhoto = photo.toLowerCase();
-        return lowerCasePhoto.endsWith('.png') 
+        return lowerCasePhoto.endsWith('.png')
       });
 
     return photoUrls;
@@ -56,14 +56,13 @@ const CartPage: NextPage = (): JSX.Element => {
             <div>Ações</div>
             <div>Total</div>
           </div>
-
           {cart.map((item: Cart) => (
             <div key={item.id} className="body">
               <div className="image">
                 {item.photos ? (
                   getPhotosArray(item.photos).length > 0 ? (
                     getPhotosArray(item.photos).map((photoUrl, index) => (
-                      <Image key={index} src={photoUrl} height={90} width={65} alt="carrinho"/>
+                      <Image key={index} src={photoUrl} height={90} width={65} alt="carrinho" />
                     ))
                   ) : (
                     <div>Nenhuma imagem disponível</div>
@@ -73,7 +72,7 @@ const CartPage: NextPage = (): JSX.Element => {
                 )}
               </div>
               <p>{item.name}</p>
-              <p>R$ {item.annualValue}</p>
+              <p>R$ {item.annul_value}</p>
               <p>{item.quantity}</p>
               <div className="buttons">
                 <button onClick={() => dispatch(incrementQuantity(item.id))}>
@@ -86,7 +85,7 @@ const CartPage: NextPage = (): JSX.Element => {
                   X
                 </button>
               </div>
-              <p>R$ {item.quantity * item.annualValue}</p>
+              <p>R$ {item.quantity * item.annul_value}</p>
             </div>
           ))}
           <h2>Total de assinaturas: R$ {getTotalPrice()}</h2>

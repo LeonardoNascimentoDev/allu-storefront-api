@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import { Plus_Jakarta_Sans } from 'next/font/google'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import GlobalStyle from '../styles/GlobalStyle'

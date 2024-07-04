@@ -1,9 +1,10 @@
 export type Product = {
   key: number
   id: number
-  image: string
+  photos: string
   name: string
   technical_details: string
+  annual_value: number
   category: string
   price: number
 } | null

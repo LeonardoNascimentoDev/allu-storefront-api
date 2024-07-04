@@ -12,7 +12,7 @@ import CategoryList from '@/src/components/CategoryList'
 import ProductList from '@/src/components/ProductList'
 
 
-const CategoryPage: NextPage = (props): JSX.Element => {
+const CategoryPage: NextPage = (): JSX.Element => {
   const router = useRouter()
   const { name } = router.query
 

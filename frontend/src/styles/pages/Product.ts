@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -13,10 +13,13 @@ export const Container = styled.div`
     width: 1200px;
     justify-self: center;
   }
-  
+
   .productCarousel {
     flex: 1;
-    background-color: red;
+    .slick-slide img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .productInfo {
@@ -39,12 +42,12 @@ export const Container = styled.div`
       flex-direction: column;
       flex-wrap: wrap;
       align-content: end;
-      
+
       .annualPrice {
         font-size: 1.5rem;
         font-weight: 400;
         line-height: 1.5rem;
-        margin: 0.5rem 0.5rem 0.20rem 1rem;
+        margin: 0.5rem 0.5rem 0.2rem 1rem;
         color: #6f707e;
       }
 
@@ -63,4 +66,46 @@ export const Container = styled.div`
     gap: 2.5rem 1rem;
     place-items: center;
   }
-`
+
+  button {
+    margin-top: 2rem;
+    height: 48px;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: #4bd184;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    color: #ffffff;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;
+
+export const StyledButton = styled.button`
+  margin-top: 2rem;
+  height: 48px;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #4bd184;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
