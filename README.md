@@ -56,8 +56,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - Next.js
  - MySQL
  - Swagger
- - Docker (Implementando)
- - Jest.js (Implementando)
+ - Docker 
+ - Jest.js
  - Winton Logger
 
  ### 📕 Boas práticas e Arquitetura
