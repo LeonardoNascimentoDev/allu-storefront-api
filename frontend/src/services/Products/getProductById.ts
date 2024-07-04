@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { Product } from "../../types/Product";
 
 async function getProductById(
-  setProducts: Dispatch<SetStateAction<Product[]>>,
+  setProducts: Dispatch<SetStateAction<Product>>,
   id: string
 ) {
   try {
