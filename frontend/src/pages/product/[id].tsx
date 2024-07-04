@@ -37,8 +37,8 @@ const ProductPage: NextPage = (): JSX.Element => {
     return <>O produto não pôde ser carregado.</>;
   }
 
-  const annualPrice = Number(product.annual_value);
-  const monthlyPrice = (annualPrice / 12).toFixed(2);
+  const annualPrice = Number(product.annual_value).toFixed(2);
+  const monthlyPrice = (Number(product.annual_value) / 12).toFixed(2);
 
   let imageUrls: string[] = [];
   try {

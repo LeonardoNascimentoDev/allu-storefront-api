@@ -32,7 +32,6 @@ const CategoryPage: NextPage = (): JSX.Element => {
     getCategories()
     getProducts(name as string)
   }, [name])
-  console.log('isUndefined', name)
   return (
     <Container>
       <div className="title">

@@ -32,13 +32,13 @@ services:
       timeout: 10s
       retries: 5
 
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    networks:
-      - app-network
-    restart: unless-stopped
+  # frontend:
+  #   build: ./frontend
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - app-network
+  #   restart: unless-stopped
 
 networks:
   app-network:
