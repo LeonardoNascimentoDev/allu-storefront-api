@@ -1,23 +1,20 @@
-DROP DATABASE IF EXISTS products_db;
+\c products_db;
 
-CREATE DATABASE products_db CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-USE products_db;
-
-CREATE TABLE products (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+CREATE TABLE IF NOT EXISTS products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
     category VARCHAR(255),
-    technicalDetails VARCHAR(2000),
-    annualValue DECIMAL(10, 2),
-    photos VARCHAR(2000)
-) CHARACTER SET utf8 COLLATE utf8_general_ci;
+    technicalDetails VARCHAR(1000) DEFAULT '' NOT NULL,
+    annualValue NUMERIC(10, 2) DEFAULT 0 NOT NULL,
+    photos VARCHAR(1000)
+);
 
-CREATE TABLE categories (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS categories (
+    id SERIAL PRIMARY KEY,
     category VARCHAR(255),
-    photo VARCHAR(2000)
-) CHARACTER SET utf8 COLLATE utf8_general_ci;
+    photo VARCHAR(1000)
+);
+
 
 INSERT INTO categories (category, photo)
 VALUES

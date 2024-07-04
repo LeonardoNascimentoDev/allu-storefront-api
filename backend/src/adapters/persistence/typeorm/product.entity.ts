@@ -16,7 +16,7 @@ export class ProductEntity {
     description: "Nome do produto",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 255 })
   name: string;
 
   @ApiProperty({
@@ -24,7 +24,7 @@ export class ProductEntity {
     description: "Categoria do produto",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 255 })
   category: string;
 
   @ApiProperty({
@@ -33,22 +33,22 @@ export class ProductEntity {
       "Placa de video RTX 3050 com 6GB, Tela 15.6” Full HD - 144 Hertz, Capacidade 512GB SSD, Processador Intel Core i5 13ª geração, Memória RAM 8GB ANV15-51-57WS",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 1000, nullable: true })
   technicalDetails: string;
 
   @ApiProperty({
     example: "2998.80",
     description: "Valor da assinatura",
-    type: String,
+    type: Number,
   })
-  @Column()
-  annualValue: string;
+  @Column({ type: "decimal", precision: 10, scale: 2, nullable: true })
+  annualValue: number;
 
   @ApiProperty({
     example: "Imagens",
     description: "Fotos do produto",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 1000 })
   photos: string;
 }

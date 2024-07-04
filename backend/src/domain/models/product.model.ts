@@ -4,7 +4,7 @@ export class Product {
     public name: string,
     public category: string,
     public technicalDetails: string,
-    public annualValue: string,
+    public annualValue: number,
     public photos: string,
   ) {}
 }

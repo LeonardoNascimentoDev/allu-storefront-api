@@ -16,7 +16,7 @@ export class CategoryEntity {
     description: "Categoria do produto",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 255 })
   category: string;
 
   @ApiProperty({
@@ -24,6 +24,6 @@ export class CategoryEntity {
     description: "Fotos da categoria",
     type: String,
   })
-  @Column()
+  @Column({ type: "varchar", length: 1000 })
   photo: string;
 }
