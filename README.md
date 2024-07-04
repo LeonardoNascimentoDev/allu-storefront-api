@@ -12,10 +12,6 @@ $ git clone git@github.com:LeonardoNascimentoDev/allu-storefront.git
 # acessar a pasta do projeto
 $ cd allu-storefront
 
-# instalar dependências do projeto
-$ npm install
-
-
 ```
 
 ## Executando a aplicação com Docker
@@ -27,6 +23,8 @@ $ npm install
 
 # construir e iniciar os contêineres
 $ docker-compose up --build
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
 ##  Rodando testes unitários com Jest.js
