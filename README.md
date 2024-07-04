@@ -27,13 +27,6 @@ $ docker-compose up --build
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
-##  Rodando testes unitários com Jest.js
-
-```bash
-# desenvolvimento
-$ npm run test
-
-```
 ##  Monitorando Logs
 
 ```bash
