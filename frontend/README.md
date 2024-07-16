@@ -1,5 +1,5 @@
 <h1 align="center">
-   Allu Storefront
+   Rent Electro Storefront
 </h1>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 ## 💻 Sobre o projeto
 
-**Allu Storefront** é uma aplicação utilizada para exposição de catálogos de produtos eletrônicos para assinatura e carrinho de compras.
+** Rent Electro Storefront** é uma aplicação utilizada para exposição de catálogos de produtos eletrônicos para assinatura e carrinho de compras.
 
 ---
 
@@ -38,10 +38,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone git@github.com:LeonardoNascimentoDev/allu-storefront.git
+$ git clone git@github.com:LeonardoNascimentoDev/rent-electro-storefront.git
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd allu-storefront
+$ cd rent-electro-storefront
 
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
