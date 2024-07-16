@@ -27,16 +27,6 @@ $ docker-compose up --build
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
-##  Monitorando Logs
-
-```bash
-# Conta teste Loggly (monitorar logs)
-$ Link para painel: https://testeallu.loggly.com/search#terms=&from=2024-07-02T17:04:50.352Z&until=2024-07-02T18:04:50.352Z&source_group=
-$ Login: testealug@gmail.com
-$ Senha: @Testeallugator2024
-
-```
-
 ## Documentação com Swagger
 
  - Swagger: http://localhost:4000/api/ 
