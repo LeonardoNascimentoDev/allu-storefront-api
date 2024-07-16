@@ -1,6 +1,6 @@
-# Allu Frontstore
+# Rent Electro
 
-Projeto de frente de loja da Allu.
+Projeto de frente de loja do Rent Electro.
 
 ## Instalação
 
