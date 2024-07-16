@@ -7,10 +7,10 @@ Projeto de frente de loja do Rent Electro.
 ```bash
 
 # clone repositório 
-$ git clone git@github.com:LeonardoNascimentoDev/allu-storefront.git
+$ git clone git@github.com:LeonardoNascimentoDev/rent-electro-storefront.git
 
 # acessar a pasta do projeto
-$ cd allu-storefront
+$ cd rent-electro-storefront
 
 ```
 
