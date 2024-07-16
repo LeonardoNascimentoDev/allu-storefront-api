@@ -1,9 +1,9 @@
 
 # Nome do Projeto
-<h1 align="center">AlluStorefrontAPI</h1>
+<h1 align="center">RentElectroStorefrontAPI</h1>
 
 ## Descrição do Projeto
-<p align="center">Allu Storefront API</p>
+<p align="center">Rent Electro Storefront API</p>
 
 
 ## Framework
